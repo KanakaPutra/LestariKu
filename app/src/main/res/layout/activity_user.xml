@@ -1,18 +1,284 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:padding="24dp"
-    android:background="#FFFFFF">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvUserWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Dashboard"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#2196F3" />
-</LinearLayout>
+    <!-- Konten utama -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F9FAFB"
+        android:padding="16dp"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header Modern -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="@drawable/bg_header_rounded"
+                android:elevation="6dp"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/profileIcon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_profile"
+                    android:contentDescription="Profil"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvUserWelcome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Selamat Datang, User"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#111827"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintStart_toEndOf="@id/profileIcon"
+                    app:layout_constraintTop_toTopOf="@id/profileIcon"
+                    app:layout_constraintBottom_toBottomOf="@id/profileIcon"
+                    app:layout_constraintEnd_toStartOf="@id/btnMenu"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp" />
+
+                <ImageView
+                    android:id="@+id/btnMenu"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="Menu"
+                    android:focusable="true"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_hamburger"
+                    app:layout_constraintBottom_toBottomOf="@id/profileIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/profileIcon"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Judul -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jelajahi Bumi Lestari"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#111827"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Deskripsi -->
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Laporkan masalah lingkungan atau temukan ide gaya hidup hijau yang ramah bumi. Mari bersama membentuk masa depan yang lebih bersih dan berkelanjutan."
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#4B5563"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Tombol Lapor Modern -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLapor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Laporkan Masalah"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:paddingVertical="14dp"
+                app:cornerRadius="12dp"
+                android:backgroundTint="#4CAF50"
+                app:iconGravity="textStart"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Menu Cards dengan Gambar -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                android:foreground="?attr/selectableItemBackground">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/menu1_image"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Menu 1" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#80000000" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Menu 1"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                android:foreground="?attr/selectableItemBackground">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/menu2_image"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Menu 2" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#80000000" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Menu 2"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                android:foreground="?attr/selectableItemBackground">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/menu3_image"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Menu 3" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#80000000" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Menu 3"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Panel kanan hamburger menu -->
+    <LinearLayout
+        android:id="@+id/rightMenuPanel"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:orientation="vertical"
+        android:background="@drawable/bg_panel_right"
+        android:elevation="12dp"
+        android:padding="16dp">
+
+        <!-- Tombol tutup X -->
+        <ImageView
+            android:id="@+id/btnCloseMenu"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_close"
+            android:contentDescription="Tutup Menu"
+            android:layout_gravity="end"
+            android:padding="6dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <!-- Menu list -->
+        <TextView
+            android:id="@+id/menuProfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profil"
+            android:textSize="18sp"
+            android:padding="14dp"
+            android:background="?attr/selectableItemBackground"
+            android:textColor="#111827"
+            android:layout_marginTop="12dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/menuRiwayat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Riwayat"
+            android:textSize="18sp"
+            android:padding="14dp"
+            android:background="?attr/selectableItemBackground"
+            android:textColor="#111827"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/menuLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textSize="18sp"
+            android:padding="14dp"
+            android:background="?attr/selectableItemBackground"
+            android:textColor="#E53935"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

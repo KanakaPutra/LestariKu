@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
+    <!-- Judul: Update Berita -->
+    <TextView
+        android:id="@+id/tvTitleUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitleBerita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Berita"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#38f770"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvTitleUpdate"
+        app:layout_constraintStart_toEndOf="@id/tvTitleUpdate" />
+
+    <!-- Icon Kertas -->
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Label Lampirkan Foto -->
+    <TextView
+        android:id="@+id/tvLabelFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lampirkan foto :"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleUpdate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Gambar Preview -->
+    <ImageView
+        android:id="@+id/imageViewPreview"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:background="#D9D9D9"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelFoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Label Judul -->
+    <TextView
+        android:id="@+id/tvJudulLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Judul Berita :"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/imageViewPreview"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Input Judul -->
+    <EditText
+        android:id="@+id/etJudulBerita"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#D9D9D9"
+        android:padding="12dp"
+        android:hint="Masukkan judul berita"
+        android:textColor="#000000"
+        android:textColorHint="#888888"
+        app:layout_constraintTop_toBottomOf="@id/tvJudulLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Label Deskripsi -->
+    <TextView
+        android:id="@+id/tvDeskripsiLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi :"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/etJudulBerita"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Input Deskripsi -->
+    <EditText
+        android:id="@+id/etDeskripsi"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:background="#D9D9D9"
+        android:padding="12dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:hint="Masukkan deskripsi berita"
+        android:textColor="#000000"
+        android:textColorHint="#888888"
+        app:layout_constraintTop_toBottomOf="@id/tvDeskripsiLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

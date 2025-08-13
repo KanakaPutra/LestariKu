@@ -1,16 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="#F9FAFB"
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Halaman Laporan"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#000000" />
-</LinearLayout>
+        android:orientation="vertical">
+
+        <!-- Judul -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajukan Laporan"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#111827"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Peringatan -->
+        <TextView
+            android:id="@+id/tvWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mohon tidak memberikan laporan palsu!"
+            android:textSize="14sp"
+            android:textColor="#F44336"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Tanggal dengan Floating Label -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tanggal Lapor"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#4CAF50"
+            app:boxStrokeWidth="2dp"
+            android:layout_marginBottom="12dp"
+            app:hintAnimationEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:inputType="none"
+                android:padding="16dp"
+                android:textColor="#111827"
+                android:textSize="16sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Lokasi -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Lokasi Lengkap"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#4CAF50"
+            app:boxStrokeWidth="2dp"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="#111827"
+                android:textSize="16sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Deskripsi Laporan -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Deskripsikan laporan Anda"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#4CAF50"
+            app:boxStrokeWidth="2dp"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etReport"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:padding="16dp"
+                android:textColor="#111827"
+                android:textSize="16sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Tombol Kirim -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kirim Laporan"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:paddingVertical="14dp"
+            app:cornerRadius="12dp"
+            android:backgroundTint="#4CAF50"/>
+    </LinearLayout>
+</ScrollView>

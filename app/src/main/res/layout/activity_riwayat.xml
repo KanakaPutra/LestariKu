@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F9F9F9"
+    tools:context=".RiwayatActivity">
+
+    <!-- Judul -->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Riwayat Laporan"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#222222"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Deskripsi -->
+    <TextView
+        android:id="@+id/textSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lihat semua laporan yang telah Anda kirim."
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/textTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Card Riwayat 1 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/textSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laporan Sungai Bersih"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#222222"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 Agustus 2025"
+                android:textSize="12sp"
+                android:textColor="#888888"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Card Riwayat 2 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/card1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penanaman Pohon"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#222222"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Agustus 2025"
+                android:textSize="12sp"
+                android:textColor="#888888"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

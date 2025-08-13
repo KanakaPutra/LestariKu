@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Gradien lembut -->
+    <gradient
+        android:startColor="#E8F5E9"
+        android:endColor="#C8E6C9"
+        android:angle="90"/>
+
+    <!-- Sudut membulat -->
+    <corners android:radius="16dp"/>
+
+    <!-- Shadow/elevation untuk Lollipop ke atas -->
+    <padding
+        android:left="4dp"
+        android:top="4dp"
+        android:right="4dp"
+        android:bottom="4dp"/>
+</shape>

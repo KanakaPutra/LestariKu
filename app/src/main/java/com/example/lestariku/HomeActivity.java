@@ -1,68 +1,46 @@
 package com.example.lestariku;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
 import android.widget.TextView;
-
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private TextView tvTitle;
+    private FirebaseAuth mAuth;
     private TextView btnLapor;
-    private TextView tvLoginLink; // Tambahkan ini
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        tvTitle = findViewById(R.id.tvTitle);
+        mAuth = FirebaseAuth.getInstance();
+
+        // Jika user sudah login, langsung ke Home User
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            startActivity(new Intent(HomeActivity.this, UserActivity.class));
+            finish(); // Supaya tidak bisa kembali ke halaman guest
+            return;
+        }
+
         btnLapor = findViewById(R.id.btnLapor);
-        tvLoginLink = findViewById(R.id.tvLoginLink); // Inisialisasi
 
-        // 1. Gradasi untuk "Bumi Lestari"
-        String fullText = "Jelajahi Bumi Lestari";
-        int start = fullText.indexOf("Bumi");
-        int end = fullText.length();
-
-        SpannableString spannable = new SpannableString(fullText);
-
-        spannable.setSpan(
-                new ForegroundColorSpan(Color.BLACK),
-                0,
-                start,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-        );
-
-        spannable.setSpan(
-                new GradientSpan(Color.parseColor("#43A047"), Color.parseColor("#26C6DA")),
-                start,
-                end,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-        );
-
-        tvTitle.setText(spannable);
-
-        // 2. Tombol Lapor warna hitam + underline
-        btnLapor.setPaintFlags(btnLapor.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        btnLapor.setTextColor(Color.BLACK);
-
-        // 3. Klik ke LaporanActivity
         btnLapor.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, LaporanActivity.class);
-            startActivity(intent);
-        });
-
-        // 4. Klik "Masuk / Daftar" → LoginActivity
-        tvLoginLink.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-            startActivity(intent);
+            // Karena ini halaman guest, user pasti null, jadi tampilkan alert login
+            new AlertDialog.Builder(HomeActivity.this)
+                    .setTitle("Login Diperlukan")
+                    .setMessage("Anda harus login terlebih dahulu untuk melaporkan masalah.")
+                    .setPositiveButton("Login", (dialog, which) -> {
+                        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    })
+                    .setNegativeButton("Batal", (dialog, which) -> dialog.dismiss())
+                    .show();
         });
     }
 }
