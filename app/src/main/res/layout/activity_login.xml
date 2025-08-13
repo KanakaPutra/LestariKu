@@ -19,7 +19,7 @@
             android:layout_height="300dp"
             android:scaleType="centerCrop"
             android:src="@drawable/bg_nature"
-        android:contentDescription="Gambar Alam" />
+            android:contentDescription="Gambar Alam" />
 
         <!-- Konten Form -->
         <LinearLayout
@@ -58,7 +58,7 @@
                     android:contentDescription="Ikon Email" />
 
                 <EditText
-                    android:id="@+id/etEmail"
+                    android:id="@+id/etLoginEmail"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -88,7 +88,7 @@
                     android:contentDescription="Ikon Password" />
 
                 <EditText
-                    android:id="@+id/etPassword"
+                    android:id="@+id/etLoginPassword"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

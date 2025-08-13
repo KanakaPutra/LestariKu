@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "263674043292",
+    "firebase_url": "https://lestariku-2cd23-default-rtdb.firebaseio.com",
+    "project_id": "lestariku-2cd23",
+    "storage_bucket": "lestariku-2cd23.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263674043292:android:0a50212f820e7e8e8c8659",
+        "android_client_info": {
+          "package_name": "com.example.lestariku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263674043292-pvhin71g2mh9ljl2a1lor5rkq7n76fi8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSCEEUd4TNyIg7fZF3c5yUf-Jy8YEQnjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263674043292-pvhin71g2mh9ljl2a1lor5rkq7n76fi8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

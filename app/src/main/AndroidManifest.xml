@@ -28,6 +28,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LaporanActivity" />
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".UserActivity" />
+
 
     </application>
 
