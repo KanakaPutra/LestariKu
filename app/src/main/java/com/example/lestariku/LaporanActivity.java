@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.lestariku.Report.Report;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -111,7 +110,7 @@ public class LaporanActivity extends AppCompatActivity {
         DatabaseReference reportsRef = dbRef.child("reports");
         String reportId = reportsRef.push().getKey();
 
-        Report laporan = new Report(userUid, userName, date, location, reportText);
+        com.example.lestariku.model.Report laporan = new com.example.lestariku.model.Report(userUid, userName, date, location, reportText);
 
         if (reportId != null) {
             reportsRef.child(reportId).setValue(laporan)
